@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Pag Prova Vicent
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,34 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Hola Mundo</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-card>
+    <ion-input placeholder="Nombre" [(ngModel)]="nombre"></ion-input>
+  </ion-card>
+
+
+  <ion-card *ngFor="let item of bocadillos">
+    <ion-card-header>
+      <ion-card-title>{{ item.nombre }} ( {{item.precio}}) €</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-label>Descripcio: </ion-label>
+      {{ item.descripcion }}
+
+       <!--<img [src]="ruta" [style.width.px]="width"> <br>
+
+      <ion-button expand="block" (click)="cambiar_Oculto()" >{{ bototext }} descripción</ion-button>
+
+      <div *ngIf = "oculto == false">bocadilllo molt bo de la casa</div> -->
+    </ion-card-content>
+  </ion-card>
+
+
+
 
   <div id="container">
     <strong>Ready to create an app?</strong>
