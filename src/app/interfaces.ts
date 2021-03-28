@@ -1,6 +1,6 @@
-export interface Ibocadillos{
+export interface Iempreses{
 "id" : number,
 "nombre" : string,
 "descripcion" : string,
-"precio" : number
+"preciohora" : number
 }

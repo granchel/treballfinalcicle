@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Ibocadillos } from '../interfaces';
+import { Iempreses } from '../interfaces';
 
 @Component({
   selector: 'app-home',
@@ -8,26 +8,32 @@ import { Ibocadillos } from '../interfaces';
 })
 export class HomePage {
 
-  titulo : string = "Bocadillo de Sepia";
+  //titulo : string = "Bocadillo de Sepia";
   oculto : boolean = false;
-  ruta : string = "../../assets/img/sepia.jpg";
+  //ruta : string = "../../assets/img/sepia.jpg";
   width : number = 250;
   bototext : string ="Ocultar"
   nombre : string;
 
-  bocadillos: Ibocadillos[] = [
+  bocadillos: Iempreses[] = [
   {
     "id" : 1,
-    "nombre" : "sepia",
-    "descripcion" : "el bocadillode de la casa",
-    "precio" : 6.2
+    "nombre" : "maniac",
+    "descripcion" : "Empresa especializada en diseño web",
+    "preciohora" : 10
     
   },
   {
     "id" : 2,
-    "nombre" : "chivito",
-    "descripcion" : "el bocadillode de la casa",
-    "precio" : 4.2
+    "nombre" : "Fontareno paco",
+    "descripcion" : "Empresa especializada en fontaneria",
+    "preciohora" : 7
+  },
+  {
+    "id" : 3,
+    "nombre" : "Carpintero Juan",
+    "descripcion" : "Empresa especializada en carpinteria",
+    "preciohora" : 9
   }
   ]
     
