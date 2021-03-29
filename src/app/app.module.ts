@@ -9,10 +9,20 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { EmpresesService } from './services/empreses.service';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+//falta un import per a comprovar video 26 min 2:20
+
+//emviroment 
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
+  ],
   providers: [
     EmpresesService,
     { provide:RouteReuseStrategy,  useClass: IonicRouteStrategy }],

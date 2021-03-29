@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { AngularFireDatabase } from "@angular/fire/database";
 import { Iempreses } from "../interfaces";
 
 
@@ -6,7 +7,7 @@ import { Iempreses } from "../interfaces";
 
 export class EmpresesService{
 
-    empreses: Iempreses[] = [
+    /*empreses: Iempreses[] = [
         {
           "id" : 1,
           "nombre" : "maniac",
@@ -26,16 +27,26 @@ export class EmpresesService{
           "descripcion" : "Empresa especializada en carpinteria",
           "preciohora" : 9
         }
-        ]
+        ]*/
 
+        constructor(private db: AngularFireDatabase){
 
-    getEmpreses(): Iempreses[]{
-        return this.empreses;
+        }
+
+    getEmpreses(): firebase.default.database.Reference{
+      let ref = this.db.database.ref("empreses");
+      return ref;
     }
 
-    getEmpresa(id : number) : Iempreses {
+    /*getEmpresa(id : number) : Iempreses {
       return this.empreses.find(x => x.id == id);
-    }
+    }*/
        
+    setEmpresa(empresa: Iempreses){
+      let ref = this.db.database.ref("empreses");
+      let res = ref.push(empresa);
+      console.log("he insertado"+res.key);
+      
+    }
 
 }

@@ -15,14 +15,24 @@ export class HomePage {
   width : number = 250;
   bototext : string ="Ocultar"
   nombre : string;
+  preciohora : number;
+  descripcion: string;
 
-  empreses: Iempreses[];
+  empreses: Iempreses[] = [];
   
 
   constructor( private _empresesService : EmpresesService) { }
 
   ngOnInit(){
-    this.empreses = this._empresesService.getEmpreses();
+    let ref = this._empresesService.getEmpreses();
+
+    ref.once("value", snapshot =>{
+      snapshot.forEach(child => {
+        let value = child.val();
+        this.empreses.push(value);
+        console.log("he encontrado "+child.val().nombre);
+      })
+    })
   }
 
   cambiar_Oculto() : void{
@@ -32,6 +42,16 @@ export class HomePage {
     }else{
       this.bototext = "Ocular"
     }
+  }
+
+  insertar(){
+    let empresa: Iempreses={"id": this.empreses.length+1,
+                        "nombre": this.nombre,
+                        "preciohora": this.preciohora,
+                        "descripcion": this.descripcion
+                      };
+    
+    this._empresesService.setEmpresa(empresa);
   }
 
 }
