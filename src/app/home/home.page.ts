@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Iempreses } from '../interfaces';
+import { EmpresesService } from '../services/empreses.service';
 
 @Component({
   selector: 'app-home',
@@ -15,30 +16,14 @@ export class HomePage {
   bototext : string ="Ocultar"
   nombre : string;
 
-  bocadillos: Iempreses[] = [
-  {
-    "id" : 1,
-    "nombre" : "maniac",
-    "descripcion" : "Empresa especializada en diseño web",
-    "preciohora" : 10
-    
-  },
-  {
-    "id" : 2,
-    "nombre" : "Fontareno paco",
-    "descripcion" : "Empresa especializada en fontaneria",
-    "preciohora" : 7
-  },
-  {
-    "id" : 3,
-    "nombre" : "Carpintero Juan",
-    "descripcion" : "Empresa especializada en carpinteria",
-    "preciohora" : 9
-  }
-  ]
-    
+  empreses: Iempreses[];
+  
 
-  constructor() {}
+  constructor( private _empresesService : EmpresesService) { }
+
+  ngOnInit(){
+    this.empreses = this._empresesService.getEmpreses();
+  }
 
   cambiar_Oculto() : void{
     this.oculto = !this.oculto;
