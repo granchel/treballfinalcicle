@@ -9,9 +9,7 @@ import { EmpresesService } from '../services/empreses.service';
 })
 export class HomePage {
 
-  //titulo : string = "Bocadillo de Sepia";
   oculto : boolean = false;
-  //ruta : string = "../../assets/img/sepia.jpg";
   width : number = 250;
   bototext : string ="Ocultar"
   nombre : string;
