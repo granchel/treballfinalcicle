@@ -7,6 +7,7 @@ export const environment = {
   firebaseConfig : {
     apiKey: "AIzaSyBG6AfMtMTLWtbjb9LtSMM6Jl0YAyLa-Jc",
     authDomain: "treballfinalionic.firebaseapp.com",
+    databaseURL: "https://treballfinalionic-default-rtdb.firebaseio.com",
     projectId: "treballfinalionic",
     storageBucket: "treballfinalionic.appspot.com",
     messagingSenderId: "829595317706",

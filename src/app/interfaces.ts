@@ -4,3 +4,7 @@ export interface Iempreses{
 "descripcion" : string,
 "preciohora" : number
 }
+
+export interface Iempreseskey extends Iempreses{
+"key" : string
+}

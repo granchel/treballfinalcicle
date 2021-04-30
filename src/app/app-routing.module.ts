@@ -12,8 +12,12 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'details',
+    path: 'details/:key',
     loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
+  },
+  {
+    path: 'llista/:nom',
+    loadChildren: () => import('./llista/llista.module').then( m => m.LlistaPageModule)
   },
 ];
 

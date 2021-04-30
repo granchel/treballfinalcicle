@@ -12,32 +12,12 @@
       <ion-title size="large">Hola Mundo</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-card>
-    <ion-input placeholder="Nombre" [(ngModel)]="nombre"></ion-input>
-    <ion-input placeholder="Preciohora" [(ngModel)]="preciohora"></ion-input>
-    <ion-input placeholder="Descripción" [(ngModel)]="descripcion"></ion-input>
-    <ion-button expand="block" (click)="insertar()">Insertar</ion-button>
-  </ion-card>
+<!-- part de insertar-->
 
 
-  <ion-card *ngFor="let item of empreses">
-    <ion-card-header>
-      <ion-card-title>{{ item.nombre }} ({{item.preciohora}}) €</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      <ion-label>Descripcio: </ion-label>
-      {{ item.descripcion }}
-
-       <!--<img [src]="ruta" [style.width.px]="width"> <br>
-
-      <ion-button expand="block" (click)="cambiar_Oculto()" >{{ bototext }} descripción</ion-button>
-
-      <div *ngIf = "oculto == false">bocadilllo molt bo de la casa</div> -->
-      <ion-button expand="block" [routerLink]="['/details/', 'id']">Detalle</ion-button>
-    </ion-card-content>
-  </ion-card>
-
+<!--Mostrar llistat -->
+ 
+      <ion-button expand="block" [routerLink]="['/llista/', 'fontaneria']">Fontaneria</ion-button>
+  
 
 </ion-content>
