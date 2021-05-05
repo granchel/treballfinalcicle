@@ -26,7 +26,6 @@ export class LlistaPage implements OnInit {
 
   ngOnInit(){
     this.nom = this.activatedRoute.snapshot.paramMap.get("nom");
-    console.log("he recibido un aaaaaaaaaaaaaaaaaa"+this.nom);
 
     let ref = this._empresesService.getEmpreses(this.nom);
        
@@ -57,15 +56,5 @@ export class LlistaPage implements OnInit {
       this.bototext = "Ocular"
     }
   }
-
-  insertar(){
-    let empresa: Iempreses={"id": this.empreses.length+1,
-                        "nombre": this.nombre,
-                        "preciohora": this.preciohora,
-                        "descripcion": this.descripcion
-                      };
-    
-    this._empresesService.setEmpresa(empresa);
-  }
-
+  
 }

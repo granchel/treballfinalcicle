@@ -12,9 +12,9 @@ export class DetailsPage implements OnInit {
 
   key : string;
 
- 
-  
-  empreses: Iempreses[] = [];
+  nombre : string;
+  preciohora : number;
+  descripcion: string; 
 
   constructor(private activatedRoute: ActivatedRoute,
     private _empresesService : EmpresesService) { }
@@ -25,41 +25,20 @@ export class DetailsPage implements OnInit {
 
     let ref = this._empresesService.getEmpresa(this.key);
 
+    
+    
+
     ref.once("value", snapshot =>{
-      snapshot.forEach(child => {
-        let value : Iempreseskey = {
-          "id" : child.val().id,
-          "nombre" : child.val().nombre,
-          "descripcion" : child.val().descripcion,
-          "preciohora" : child.val().preciohora,
-          "key" : child.key
-        };
-        this.empreses.push(value);
-        console.log("he encontrado "+child.val().nombre);
-      })
+      this.nombre = snapshot.val().nombre;
+      this.preciohora = snapshot.val().preciohora;
+      this.descripcion = snapshot.val().descripcion;
+      
+     
     })
   }
     
   }
 
 
-//esto es per a mostrar els detalls paregut al llistat
-  /*ngOnInit(){
-    let ref = this._empresesService.getEmpreses();
-
-    ref.once("value", snapshot =>{
-      snapshot.forEach(child => {
-        let value : Iempreseskey = {
-          "id" : child.val().id,
-          "nombre" : child.val().nombre,
-          "descripcion" : child.val().descripcion,
-          "preciohora" : child.val().preciohora,
-          "key" : child.key
-        };
-        this.empreses.push(value);
-        console.log("he encontrado "+child.val().nombre);
-      })
-    })
-  }*/
 
 

@@ -12,13 +12,7 @@
       <ion-title size="large">Hola Mundo</ion-title>
     </ion-toolbar>
   </ion-header>
-<!-- part de insertar-->
-  <ion-card>
-    <ion-input placeholder="Nombre" [(ngModel)]="nombre"></ion-input>
-    <ion-input placeholder="Preciohora" [(ngModel)]="preciohora"></ion-input>
-    <ion-input placeholder="Descripción" [(ngModel)]="descripcion"></ion-input>
-    <ion-button expand="block" (click)="insertar()">Insertar</ion-button>
-  </ion-card>
+  <ion-button expand="block" [routerLink]="['/insertar']">Insertar</ion-button>
 
 <!--Mostrar llistat -->
 <!--En principi este es el dif que fa que si es fontaneria aparega la llista de fontaneria , si no l'altra. -->

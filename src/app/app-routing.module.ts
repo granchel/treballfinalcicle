@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'llista/:nom',
     loadChildren: () => import('./llista/llista.module').then( m => m.LlistaPageModule)
   },
+  {
+    path: 'insertar',
+    loadChildren: () => import('./insertar/insertar.module').then( m => m.InsertarPageModule)
+  },
 ];
 
 @NgModule({

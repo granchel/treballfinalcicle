@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Pag Prova Vicent
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Hola Mundo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<!-- part de insertar-->
+  <ion-card>
+    <ion-input placeholder="Nombre" [(ngModel)]="nombre"></ion-input>
+    <ion-input placeholder="Preciohora" [(ngModel)]="preciohora"></ion-input>
+    <ion-input placeholder="Descripción" [(ngModel)]="descripcion"></ion-input>
+    <ion-button expand="block" (click)="insertar()">Insertar</ion-button>
+  </ion-card>
+
+  <ion-button expand="block" [routerLink]="['/llista/', 'fontaneria']">Llistat</ion-button>
+
+
+</ion-content>
