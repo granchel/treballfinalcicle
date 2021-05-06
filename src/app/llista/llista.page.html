@@ -14,10 +14,16 @@
   </ion-header>
   <ion-button expand="block" [routerLink]="['/insertar']">Insertar</ion-button>
 
+
+  <ion-searchbar animated 
+                (ionChange)="buscar ( $event )">
+  </ion-searchbar>
+
+
 <!--Mostrar llistat -->
 <!--En principi este es el dif que fa que si es fontaneria aparega la llista de fontaneria , si no l'altra. -->
 <div *ngIf = " this.nom == 'fontaneria'" >
-  <ion-card *ngFor="let item of empreses">
+  <ion-card *ngFor="let item of empreses | filtro: textoBuscar">
     <ion-card-header>
       <ion-card-title>{{ item.nombre }} ({{item.preciohora}}) €</ion-card-title>
     </ion-card-header>

@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { LlistaPageRoutingModule } from './llista-routing.module';
 
 import { LlistaPage } from './llista.page';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LlistaPageRoutingModule
+    LlistaPageRoutingModule,
+    PipesModule
   ],
   declarations: [LlistaPage]
 })

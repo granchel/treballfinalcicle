@@ -19,6 +19,7 @@ export class LlistaPage implements OnInit {
   nom : string;
 
   empreses: Iempreses[] = [];
+  textoBuscar: '';
   
 
   constructor( private _empresesService : EmpresesService,
@@ -55,6 +56,10 @@ export class LlistaPage implements OnInit {
     }else{
       this.bototext = "Ocular"
     }
+  }
+
+  buscar( event ) {
+    this.textoBuscar = event.detail.value;
   }
   
 }
