@@ -8,14 +8,24 @@
 
     <ion-content>
       <ion-list>
+        <ion-item routerLink="/login">
+          <ion-icon name="person-circle-outline" slot="start"> </ion-icon>
+          <ion-label>Iniciar Sesion</ion-label>
+        </ion-item>
         <ion-item routerLink="/home">
-          <ion-icon name="mail" slot="start"> </ion-icon>
+          <ion-icon name="home-outline" slot="start"> </ion-icon>
           <ion-label>Home</ion-label>
         </ion-item>
         <ion-item routerLink="/insertar">
-          <ion-icon name="mail" slot="start"> </ion-icon>
+          <ion-icon name="add-circle-outline" slot="start"> </ion-icon>
           <ion-label>Insertar</ion-label>
         </ion-item>
+        <ion-item routerLink="/insertar">
+          <ion-icon name="log-out-outline" slot="start"> </ion-icon>
+          <ion-label (click)="Onlogout()">Desconectarse</ion-label>
+        </ion-item>
+        
+       <!-- <ion-button (click)="Onlogout()">Desconectarse</ion-button> -->
       </ion-list>
     </ion-content>
   </ion-menu>

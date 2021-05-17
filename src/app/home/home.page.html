@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Pag Prova Vicent
+  <ion-toolbar color="primary">
+    <ion-title class="titulo">
+      InfolaVall
     </ion-title>
     <ion-buttons slot="start">
      <ion-menu-button menu="main-menu"></ion-menu-button>
@@ -20,7 +20,8 @@
 
 <!--Mostrar llistat -->
  
-    <ion-button expand="block" [routerLink]="['/llista/', 'fontaneria']">Fontaneria</ion-button>
-  
+    <ion-button class="botoempresa" expand="block" [routerLink]="['/llista/', 'fontaneria']">Fontaneria</ion-button>
+    <ion-button class="botoempresa" expand="block" [routerLink]="['/llista/', 'fusteria']">Fusteria</ion-button>
+    <ion-button class="botoempresa" expand="block" [routerLink]="['/llista/', 'informatica']">Informática</ion-button>
 
 </ion-content>

@@ -3,13 +3,12 @@ import { AngularFireDatabase } from "@angular/fire/database";
 import { Iempreses } from "../interfaces";
 
 
+
 @Injectable()
 
 export class EmpresesService{
 
-        constructor(private db: AngularFireDatabase){
-
-        }
+        constructor(private db: AngularFireDatabase){ }
 
     getEmpreses(nom : string): firebase.default.database.Reference{
       console.log("dins de getEmpreses"+nom);

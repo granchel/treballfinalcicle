@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Iempreses, Iempreseskey } from '../interfaces';
 import { EmpresesService } from '../services/empreses.service';
 
@@ -19,7 +19,7 @@ export class InsertarPage implements OnInit {
   
 
   constructor( private _empresesService : EmpresesService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute, public router: Router) { }
 
   ngOnInit(){
  
@@ -34,6 +34,8 @@ export class InsertarPage implements OnInit {
                       };
     
     this._empresesService.setEmpresa(empresa);
+
+    this.router.navigate(['/home']);
   }
 
 }

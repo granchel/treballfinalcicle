@@ -19,7 +19,7 @@ export class LlistaPage implements OnInit {
   nom : string;
 
   empreses: Iempreses[] = [];
-  textoBuscar: '';
+  textoBuscar: string = '';
   
 
   constructor( private _empresesService : EmpresesService,
