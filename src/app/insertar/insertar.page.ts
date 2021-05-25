@@ -13,6 +13,7 @@ export class InsertarPage implements OnInit {
   nombre : string;
   preciohora : number;
   descripcion: string;
+  localidad: string;
   nom : string;
 
   empreses: Iempreses[] = [];
@@ -30,7 +31,8 @@ export class InsertarPage implements OnInit {
     let empresa: Iempreses={"id": this.empreses.length+1,
                         "nombre": this.nombre,
                         "preciohora": this.preciohora,
-                        "descripcion": this.descripcion
+                        "descripcion": this.descripcion,
+                        "localidad": this.localidad
                       };
     
     this._empresesService.setEmpresa(empresa);

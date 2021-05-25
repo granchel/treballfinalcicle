@@ -17,8 +17,6 @@ export class AuthService {
        resolve(user);
       }).catch(err => rejected(err));
     });
-    
-   
   }
 
   logout(){

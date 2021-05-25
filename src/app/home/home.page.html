@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title class="titulo">
+      <ion-icon name="home-outline"></ion-icon>
       InfolaVall
     </ion-title>
     <ion-buttons slot="start">
@@ -19,9 +20,34 @@
 
 
 <!--Mostrar llistat -->
+ <ion-grid>
+
+  <br><br>
+  <ion-row>
+    <ion-col>
+      <ion-button class="botoempresa" expand="block" [routerLink]="['/llista/', 'fontaneria']">
+        <ion-icon name="water-outline">
+        </ion-icon>  &nbsp;
+          Fontaneria
+        </ion-button>
+
+    </ion-col>
+
+    <ion-col>
+      <ion-button class="botoempresa" expand="block" [routerLink]="['/llista/', 'fusteria']">
+        <ion-icon name="hammer-outline"></ion-icon> &nbsp;
+        Fusteria</ion-button>
+    </ion-col>
+  </ion-row>
  
-    <ion-button class="botoempresa" expand="block" [routerLink]="['/llista/', 'fontaneria']">Fontaneria</ion-button>
-    <ion-button class="botoempresa" expand="block" [routerLink]="['/llista/', 'fusteria']">Fusteria</ion-button>
-    <ion-button class="botoempresa" expand="block" [routerLink]="['/llista/', 'informatica']">Informática</ion-button>
+  <ion-row>
+    <ion-col>
+      <ion-button class="botoempresa" expand="block" [routerLink]="['/llista/', 'informatica']">
+        <ion-icon name="desktop-outline"></ion-icon> &nbsp;
+        Informàtica</ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>
 
 </ion-content>

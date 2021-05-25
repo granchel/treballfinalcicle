@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title class="titulo">
+      <ion-icon name="add-circle-outline"></ion-icon> 
       Insertar Empresa
     </ion-title>
     <ion-buttons slot="start">
@@ -20,6 +21,7 @@
     <ion-input placeholder="Nombre" [(ngModel)]="nombre"></ion-input>
     <ion-input placeholder="Preciohora" [(ngModel)]="preciohora"></ion-input>
     <ion-input placeholder="Descripción" [(ngModel)]="descripcion"></ion-input>
+    <ion-input placeholder="localidad" [(ngModel)]="localidad"></ion-input>
     <ion-button expand="block" (click)="insertar()">Insertar</ion-button>
   </ion-card>
 

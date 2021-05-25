@@ -16,6 +16,8 @@ export class LlistaPage implements OnInit {
   nombre : string;
   preciohora : number;
   descripcion: string;
+  localidad : string;
+
   nom : string;
 
   empreses: Iempreses[] = [];
@@ -27,6 +29,8 @@ export class LlistaPage implements OnInit {
 
   ngOnInit(){
     this.nom = this.activatedRoute.snapshot.paramMap.get("nom");
+
+    this._empresesService.setTipo(this.nom);
 
     let ref = this._empresesService.getEmpreses(this.nom);
        
@@ -41,6 +45,7 @@ export class LlistaPage implements OnInit {
           "nombre" : child.val().nombre,
           "descripcion" : child.val().descripcion,
           "preciohora" : child.val().preciohora,
+          "localidad" : child.val().localidad,
           "key" : child.key
         };
         this.empreses.push(value);

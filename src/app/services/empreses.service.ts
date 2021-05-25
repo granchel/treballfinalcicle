@@ -7,6 +7,7 @@ import { Iempreses } from "../interfaces";
 @Injectable()
 
 export class EmpresesService{
+  tipoempresa: string;
 
         constructor(private db: AngularFireDatabase){ }
 
@@ -19,15 +20,23 @@ export class EmpresesService{
     }
 
     getEmpresa(key : string) : firebase.default.database.Reference {
-      let ref = this.db.database.ref("empreses").child("fontaneria");
+      let ref = this.db.database.ref("empreses").child(this.tipoempresa);
       return ref.child(key);
     }
        
     setEmpresa(empresa: Iempreses){
-      let ref = this.db.database.ref("empreses").child("fontaneria");
+      let ref = this.db.database.ref("empreses").child(this.tipoempresa);
       let res = ref.push(empresa);
       console.log("he insertado"+res.key);
       
+    }
+
+    getTipo(): string {
+      return this.tipoempresa;
+    }
+
+    setTipo(tipo : string){
+      this.tipoempresa = tipo;
     }
 
 }
