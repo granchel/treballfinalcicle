@@ -25,7 +25,7 @@
     <ion-card-content>
 
      
-        <img src="../../assets/img/fontaneria.jpg">
+        <img src="../../assets/img/teamwork.jpg">
     
       <!-- <div *ngIf = "this.nom == 'fontaneria'">
       </div> -->
@@ -37,6 +37,14 @@
       <br>
       <ion-label>Localitat: </ion-label>
       {{ this.localidad }}
+      <br><br>
+      <h2><ion-label>CONTACTO </ion-label></h2>
+      <ion-label>Teléfono: </ion-label>
+      {{ this.tlf }}
+      <br>
+      <ion-label>Emali: </ion-label>
+      {{ this.email }}
+      <br><br>
 
       <ion-button expand="block" [routerLink]="['/home/']">Home</ion-button>
     </ion-card-content>

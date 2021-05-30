@@ -16,6 +16,8 @@ export class DetailsPage implements OnInit {
   preciohora : number;
   descripcion: string; 
   localidad : string;
+  tlf : number;
+  email : string;
 
   nom : string;
 
@@ -40,6 +42,8 @@ export class DetailsPage implements OnInit {
       this.preciohora = snapshot.val().preciohora;
       this.descripcion = snapshot.val().descripcion;
       this.localidad = snapshot.val().localidad;
+      this.tlf = snapshot.val().tlf;
+      this.email = snapshot.val().email;
      
     })
     

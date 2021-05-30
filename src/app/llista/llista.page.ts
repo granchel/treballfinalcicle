@@ -17,6 +17,8 @@ export class LlistaPage implements OnInit {
   preciohora : number;
   descripcion: string;
   localidad : string;
+  tlf : number;
+  email : string;
 
   nom : string;
 
@@ -46,6 +48,8 @@ export class LlistaPage implements OnInit {
           "descripcion" : child.val().descripcion,
           "preciohora" : child.val().preciohora,
           "localidad" : child.val().localidad,
+          "tlf" : child.val().tlf,
+          "email" : child.val().email,
           "key" : child.key
         };
         this.empreses.push(value);

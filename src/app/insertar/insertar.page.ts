@@ -14,6 +14,8 @@ export class InsertarPage implements OnInit {
   preciohora : number;
   descripcion: string;
   localidad: string;
+  tlf: number;
+  email: string;
   nom : string;
 
   empreses: Iempreses[] = [];
@@ -32,7 +34,9 @@ export class InsertarPage implements OnInit {
                         "nombre": this.nombre,
                         "preciohora": this.preciohora,
                         "descripcion": this.descripcion,
-                        "localidad": this.localidad
+                        "localidad": this.localidad,
+                        "tlf": this.tlf,
+                        "email": this.email
                       };
     
     this._empresesService.setEmpresa(empresa);
